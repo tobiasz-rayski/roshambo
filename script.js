@@ -14,12 +14,19 @@ function roshamboGame() {
     },
   };
 
+  let playerScore = 0;
+  let cpuScore = 0;
+
   const optionsArr = Object.keys(options);
 
-  let userSelect = prompt("Choose your weapon...");
-
+  let playerSelect = "paper";
   let cpuSelect = optionsArr[Math.floor(Math.random() * optionsArr.length)];
-  console.log(cpuSelect);
+
+  if (cpuSelect == options[playerSelect].wins) {
+    playerScore++;
+  } else if (cpuSelect == options[playerSelect].loses) {
+    cpuScore++;
+  }
 }
 
 roshamboGame();
