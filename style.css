@@ -1,0 +1,19 @@
+body {
+  background-color: #051329;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.container {
+  width: 1140px;
+  height: 600px;
+  background-color: #081933;
+  border: 1px solid white;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem #ffffff75;
+}
