@@ -1,5 +1,7 @@
-body {
+body,
+html {
   background-color: #051329;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .wrapper {
@@ -16,4 +18,32 @@ body {
   border: 1px solid white;
   border-radius: 1rem;
   box-shadow: 0 0 1rem #ffffff75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  cursor: pointer;
+  line-height: normal;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+}
+
+#play {
+  font-size: 2rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: 2px solid #fff;
+  padding: 0.5rem 2rem;
+}
+
+#play:hover {
+  box-shadow: 0 0 0.7rem #fff;
 }
