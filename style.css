@@ -47,3 +47,8 @@ button {
 #play:hover {
   box-shadow: 0 0 0.7rem #fff;
 }
+
+.push {
+  transition: transform 0.05s ease-out;
+  transform: translate(2px, 2px);
+}
