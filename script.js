@@ -17,15 +17,20 @@ function roshamboGame() {
   let playerScore = 0;
   let cpuScore = 0;
 
-  const optionsArr = Object.keys(options);
+  function playOne() {
+    const optionsArr = Object.keys(options);
+    let playerSelect = "paper";
+    let cpuSelect = optionsArr[Math.floor(Math.random() * optionsArr.length)];
 
-  let playerSelect = "paper";
-  let cpuSelect = optionsArr[Math.floor(Math.random() * optionsArr.length)];
+    if (cpuSelect == options[playerSelect].wins) {
+      playerScore++;
+    } else if (cpuSelect == options[playerSelect].loses) {
+      cpuScore++;
+    }
+  }
 
-  if (cpuSelect == options[playerSelect].wins) {
-    playerScore++;
-  } else if (cpuSelect == options[playerSelect].loses) {
-    cpuScore++;
+  while (playerScore < 3 && cpuScore < 3) {
+    playOne();
   }
 }
 
