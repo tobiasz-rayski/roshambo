@@ -1,3 +1,5 @@
+function showUI() {}
+
 function clickAnimation(e) {
   this.classList.add("push");
   this.addEventListener("mouseup", () => {
@@ -14,7 +16,10 @@ function disappear(e) {
 }
 
 const playButton = document.getElementById("play");
+const buttons = document.querySelectorAll(".btn");
 
-playButton.addEventListener("mousedown", clickAnimation);
+buttons.forEach((button) =>
+  button.addEventListener("mousedown", clickAnimation)
+);
 playButton.addEventListener("mouseup", disappear);
-playButton.addEventListener("transitionend", removeObject);
+playButton.addEventListener("transitionend", showUI);
