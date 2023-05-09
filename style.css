@@ -100,6 +100,8 @@ button {
 }
 
 .game-btn {
+  line-height: 0;
+  font-size: 3rem;
   height: 6rem;
   width: 6rem;
   font-weight: 700;
