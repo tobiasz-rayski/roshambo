@@ -1,8 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   background-color: #051329;
   font-family: "IBM Plex Sans", sans-serif;
-  box-sizing: border-box;
 }
 
 .wrapper {
@@ -22,6 +25,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 6rem 3rem;
 }
 
 .container-ui {
@@ -30,6 +34,7 @@ html {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  align-self: flex-end;
 }
 
 button {
