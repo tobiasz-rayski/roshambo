@@ -1,3 +1,7 @@
+window.onload = () => {
+  containerItems.forEach((item) => item.classList.add("hidden"));
+};
+
 function showUI() {}
 
 function clickAnimation(e) {
@@ -23,3 +27,6 @@ buttons.forEach((button) =>
 );
 playButton.addEventListener("mouseup", disappear);
 playButton.addEventListener("transitionend", showUI);
+
+const container = document.querySelector(".container");
+const containerItems = container.querySelectorAll("*:not(#play)");
