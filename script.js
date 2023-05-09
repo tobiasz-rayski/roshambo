@@ -2,8 +2,6 @@ window.onload = () => {
   containerItems.forEach((item) => item.classList.add("hidden"));
 };
 
-function showUI() {}
-
 function clickAnimation(e) {
   this.classList.add("push");
   this.addEventListener("mouseup", () => {
@@ -30,3 +28,9 @@ playButton.addEventListener("transitionend", showUI);
 
 const container = document.querySelector(".container");
 const containerItems = container.querySelectorAll("*:not(#play)");
+
+function showUI(e) {
+  if (e.propertyName !== "opacity") return;
+  containerItems.forEach((item) => item.classList.remove("hidden"));
+  containerItems.forEach((item) => item.classList.add("appear"));
+}
