@@ -14,7 +14,7 @@ function roshamboGame() {
     },
   };
 
-  let playerScore = 0;
+  let playerScore = 3;
   let cpuScore = 0;
 
   function playOne() {
@@ -28,10 +28,4 @@ function roshamboGame() {
       cpuScore++;
     }
   }
-
-  while (playerScore < 3 && cpuScore < 3) {
-    playOne();
-  }
 }
-
-roshamboGame();
