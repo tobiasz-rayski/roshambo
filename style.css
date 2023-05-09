@@ -63,7 +63,8 @@ button {
   box-shadow: 0 0 0.7rem #fff;
 }
 
-#play {
+#play,
+.play-again {
   font-size: 2rem;
   font-family: inherit;
   font-weight: 500;
@@ -142,9 +143,27 @@ button {
 .announce {
   font-size: 6rem;
   font-weight: 700;
-  position: absolute;
+  cursor: crosshair;
 }
 
 .fade {
   opacity: 0.6;
+}
+
+#container-overlay {
+  position: absolute;
+  width: 1140px;
+  height: 600px;
+  background-color: #08193300;
+  border: 1px solid white;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 3rem;
+  z-index: -1;
+}
+
+.play-again {
+  margin-top: 12rem;
 }

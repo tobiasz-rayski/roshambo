@@ -116,9 +116,23 @@ function gameLogic(cpuSelect, playerSelect) {
 
 function announceWinner(cpuScore, playerScore) {
   if (playerScore == 5) {
-    containerItems.forEach((item) => item.classList.add("fade"));
+    containerItems.forEach((item) => {
+      if (!item.classList.contains("on-top")) {
+        item.classList.add("fade");
+      }
+    });
+    containerOverlay.style.zIndex = 999;
+    playAgainButton.classList.remove("hidden-a");
+    textAnnouncePlayer.classList.remove("hidden-a");
   } else if (cpuScore == 5) {
-    containerItems.forEach((item) => item.classList.add("fade"));
+    containerItems.forEach((item) => {
+      if (!item.classList.contains("on-top")) {
+        item.classList.add("fade");
+      }
+    });
+    containerOverlay.style.zIndex = 999;
+    textAnnounceCPU.classList.remove("hidden-a");
+    playAgainButton.classList.remove("hidden-a");
   }
 }
 
@@ -131,7 +145,23 @@ const btnScissorsCPU = document.getElementById("scissors-btn-cpu");
 const textDisplay = document.querySelector(".log");
 const textAnnouncePlayer = document.getElementById("announce-player");
 const textAnnounceCPU = document.getElementById("announce-cpu");
+const containerOverlay = document.getElementById("container-overlay");
+const playAgainButton = document.getElementById("play-again-btn");
 
 btnRock.addEventListener("click", playRock);
 btnPaper.addEventListener("click", playPaper);
 btnScissors.addEventListener("click", playScissors);
+playAgainButton.addEventListener("click", resetGame);
+
+function resetGame() {
+  playerScore = 0;
+  cpuScore = 0;
+  containerItems.forEach((item) => item.classList.remove("fade"));
+  containerItems.forEach((item) => item.classList.remove("push"));
+  containerOverlay.style.zIndex = -1;
+  textAnnouncePlayer.classList.add("hidden-a");
+  textAnnounceCPU.classList.add("hidden-a");
+  playAgainButton.classList.add("hidden-a");
+  playerScoreNum.textContent = playerScore;
+  cpuScoreNum.textContent = cpuScore;
+}
