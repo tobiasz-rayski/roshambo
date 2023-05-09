@@ -63,10 +63,20 @@ function playOne() {
 
   if (cpuSelect == options[playerSelect].wins) {
     playerScore++;
+    playerScoreNum.textContent = playerScore;
+    textDisplay.textContent = "Player wins!";
   } else if (cpuSelect == options[playerSelect].loses) {
     cpuScore++;
+    cpuScoreNum.textContent = cpuScore;
+    textDisplay.textContent = "CPU wins!";
+  } else {
+    textDisplay.textContent = "DRAW!";
   }
 }
 
-playerScoreNum.textContent = playerScore;
-cpuScoreNum.textContent = cpuScore;
+const btnRock = document.getElementById("rock-btn");
+const btnPaper = document.getElementById("paper-btn");
+const btnScissors = document.getElementById("scissors-btn");
+const textDisplay = document.querySelector(".log");
+
+btnRock.addEventListener("click", playOne);
